@@ -1,0 +1,66 @@
+	.container{
+    		top: 5%;
+    		/*z-index: 1050;*/
+    	}
+	.row{
+	    padding: 5%;
+	    background: white;
+	}
+	#row-nav{
+		margin-bottom: 2%;
+	}
+	.col-xs-12 button{
+		width: 33.33%;
+		
+	}
+	#nav-order{
+		width: 100%;
+	}		
+	#goods{
+		margin-top: 28% ;
+		/*height: 400px;*/
+		
+	}
+	.thumbnail{
+		margin:0px;
+		margin-top: 10px;
+		padding: 0px;
+		z-index: 1050;
+	}
+	.thumbnail .caption{
+		padding:0px;
+	}
+	.thumbnail .caption h4,h6{
+		margin: 10px auto;
+	}
+	#footer{
+		background: white;
+	}
+	#footer li{
+		text-align: center;
+		padding-bottom: 5%;
+	}
+	#footer a{
+		/*color: black;*/
+	}
+	.btn:focus,.btn:active:focus,.btn.active:focus,.btn.focus,.btn:active.focus,.btn.active.focus {
+		outline: none;          
+		}
+	/*sup{
+		color: red;
+		background: red;
+		height: 2px;
+		width: 2px;
+		border-radius: 2px;
+	}*/
+	#goods div{
+		cursor: pointer;
+	}
+	sup{
+		background: red;
+		color: white;  
+		border-radius: 5px; /*圆角*/
+		padding: 0px 3px;
+		top: -2.5em;
+		left: 1em;
+	}

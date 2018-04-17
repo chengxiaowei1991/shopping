@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>Shopping</title>
+</head>
+<body ng-controller="itemsController">
+    <div id="footer" class="navbar-fixed-bottom col-xs-12">
+            <ul class="nav nav-pills">
+                <li id="footer1" style="margin: 0px;" role="presentation" class="col-xs-3"><a ui-sref="home" ><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+                <li id="footer2" style="margin: 0px;" role="presentation" class="col-xs-3"><a ui-sref="market"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a></li>
+                <li id="footer3" style="margin: 0px;" role="presentation" class="col-xs-3"><a ui-sref="cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><sup>{{count}}</sup></a></li>
+                <li id="footer4" style="margin: 0px;" role="presentation" class="col-xs-3"><a ui-sref="mine"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+            </ul>
+    </div>
+	<div ui-view></div>
+	<div class="container">
+        <div class="row navbar-fixed-top">
+            <div id="row-nav" class="col-lg-6 col-xs-12 col-sm-6">
+                <div id="nav-order" class="btn-group" role="group" >
+                    <button type="button" class="btn btn-info" ng-click="orderKey='better'">按评价排序<span class="caret"</span></button>
+                    <button type="button" class="btn btn-info" ng-click="orderKey='price'">按价格排序<span class="caret"</span></button>
+                    <button type="button" class="btn btn-info" ng-click="orderKey='saled'">按销量排序<span class="caret"</span></button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-xs-12 col-sm-4">
+                <input type="text" class="form-control" placeholder="输入商品名称" ng-model="searchKey">
+            </div>
+        </div>
+        <!--<div class="row">
+            &nbsp;
+        </div>-->
+        <h1 style="text-align:center;position: absolute;top: 40%;">{{tip}}</h1>
+    	<div id="goods" ng-click="count = count + 1">
+        	<div  class="col-md-2 col-xs-4 col-sm-4" ng-repeat="item in items | filter:results | orderBy:orderKey ">
+                <div class="test">
+                <div class="thumbnail" style="text-align:center">
+                    <img ng-src="{{item.img}} " alt="测试图片" srcset="">
+                    <div class="caption">
+                        <h4 ng-bind="item.name"></h4>
+                        <h4><span class="label label-info" ng-bind="item.price | currency:'￥'">5000</span></h4>
+                        <h6>已售:{{item.saled}} </h6>
+                        <h6>好评:{{item.better}}</h6>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mock.min.js"></script>
+    <script src="js/mock-phone.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

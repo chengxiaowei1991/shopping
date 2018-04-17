@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <title>商品展示</title>
+    <style>
+        body{
+            padding-top: 20px;
+        }
+        #row-nav{
+			margin-bottom: 5px;
+		}
+		.col-xs-12 button{
+			width: 115px;
+		}
+		.col-xs-4{
+			height:160px;
+		}
+		#goods{
+			height: 400px;
+			background: black;
+		}
+		.thumbnail .caption{
+			padding:0px;
+		}
+		.caption h4,h6,span{
+			padding: 1px;
+			margin: 3px auto;
+		}
+    </style>
+</head>
+<body ng-controller="itemsController">
+    <div class="container">
+        <div class="row">
+            <div id="row-nav" class="col-lg-6 col-xs-12 col-sm-6">
+                <div id="nav-order" class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-info" ng-click="orderKey='better'">按评价排序</button>
+                    <button type="button" class="btn btn-info" ng-click="orderKey='price'">按价格排序</button>
+                    <button type="button" class="btn btn-info" ng-click="orderKey='saled'">按销量排序</button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-xs-12 col-sm-4">
+                <input type="text" class="form-control" placeholder="输入商品名称" ng-model="searchKey">
+            </div>
+        </div>
+        <!--<div class="row">
+            &nbsp;
+        </div>-->
+        <div id="goods">
+        	<div class="col-md-2 col-xs-4 col-sm-2">
+                <!-- <div class="col-md-2"> -->
+                <div class="thumbnail" style="text-align:center">
+                    <img ng-src="{{item.img}} " alt="测试图片" srcset="">
+                    <div class="caption">
+                        <h4 ng-bind="item.name"></h4>
+                        <h6><span class="label label-info " ng-bind="item.price | currency:'￥'">5000</span></h6>
+                        <h6>已售:{{item.saled}} </h6>
+                        <h6>好评:{{item.better}}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/mock.min.js"></script>
+    <script src="js/mock-phone.js"></script>
+</body>
+</html>
